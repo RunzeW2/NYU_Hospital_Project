@@ -1,0 +1,284 @@
+%\documentclass[]{beamer}
+%\documentclass[handout]{beamer}
+%\usepackage{epsf}
+\documentclass[pdf]{beamer}
+\usepackage{amsfonts}
+\usepackage{amsthm,amssymb,amsbsy}
+%\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+
+\usepackage{mathtools}
+
+\usepackage{array}
+\setbeamercovered{transparent}
+\newcounter{savedenum}
+\newcommand*{\saveenum}{\setcounter{savedenum}{\theenumi}}
+\newcommand*{\resume}{\setcounter{enumi}{\thesavedenum}}
+
+\usepackage{romannum}
+
+\usepackage[super]{nth}
+%\nth{1}, \nth{2}, \nth{3}, \nth{4}
+
+%\usepackage{tabularx}
+\usepackage{verbatim}
+
+
+\usepackage{lmodern}
+\usepackage{animate}
+\usepackage{graphics}
+\usepackage{color}
+\usepackage{caption}
+\captionsetup{labelfont = {color = black},font = {it, scriptsize}}
+
+\usepackage{bbm}
+
+
+\usepackage{mathdots}% http://ctan.org/pkg/mathdots
+\usepackage{yhmath}% http://ctan.org/pkg/yhmath
+
+%\usepackage{algorithm2e}
+\usepackage[linesnumbered,algoruled,boxed,lined]{algorithm2e}
+
+\usepackage{multicol}
+
+\usepackage{draftwatermark}
+%\usepackage{graphicx}
+\usepackage{lipsum}
+
+
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usepackage{tikz-dependency}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning, decorations.markings}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\DrawBox}[1][]{%
+    \tikz[overlay,remember picture]{
+    \draw[red,#1]
+      ($(left)+(-0.2em,0.9em)$) rectangle
+      ($(right)+(0.2em,-0.3em)$);}
+}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.6}
+
+\pgfplotsset{soldot/.style={color=blue,only marks,mark=*}} \pgfplotsset{holdot/.style={color=blue,fill=white,only marks,mark=*}}
+
+
+\usetheme{Darmstadt}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+
+%\useoutertheme{shadow}
+\usecolortheme{dolphin}
+
+%\usetheme{CambridgeUS}
+%\usepackage[latin1]{inputenc}
+%\usefonttheme{professionalfonts}
+%\usepackage{times}
+%\usepackage{tikz}
+%\usepackage{amsmath}
+%\usepackage{verbatim}
+%\usetikzlibrary{arrows,shapes}
+
+
+
+%---------------------------------------------------------
+
+\theoremstyle{definition} \theoremstyle{plain} \theoremstyle{remark}
+
+\newcommand{\supp}{\mathrm{supp}}
+\newcommand{\IE}{\mathbb{E}}
+\newcommand{\1}{\mathbf{1} }
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\IQ}{\mathbb{Q}}
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\IO}{\mathbb{O}}
+\newcommand{\IA}{\mathbb{A}}
+\newcommand{\IC}{\mathbb{C}}
+\newcommand{\II}{\mathbb{I}}
+\newcommand{\IF}{\mathbb{F}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\spn}{\mathrm{span}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\HS}{\mathcal{L}_{\mathrm{HS}}}
+\newcommand{\trace}{\mathrm{Tr}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\s}{\mathcal{S}}
+\newcommand{\ee}{\mathcal{E}}
+\newcommand{\ff}{\mathcal{F}}
+\newcommand{\hh}{\mathcal{H}}
+\newcommand{\bb}{\mathcal{B}}
+\newcommand{\oo}{\mathcal{O}}
+\newcommand{\dd}{\mathcal{D}}
+\newcommand{\g}{\mathcal{G}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\T}{\mathcal{T}}
+\def\IE{{\mathbb{E}}}
+\def\F{{\cal F}}
+\def\Cov{{ \mbox{Cov}}}
+\def\Var{{ \mbox{Var}}}
+\def\Tr{{\mbox{Tr}}}
+
+\def\hyph{-\penalty0\hskip0pt\relax}
+
+\newcommand{\indicator}{\mathbbm{1}}
+\newcommand{\Ii}{\mathbbm{1}}
+
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newtheorem*{Def}{Definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{Prop}{Proposition}         %% un-numbered
+\newtheorem*{sublemma}{Sublemma}
+\newtheorem*{THM}{Theorem}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows}
+\tikzset{
+  basics/.style={minimum width=20mm, minimum height=7.5mm, text centered, draw=black},
+  startstop/.style={rectangle, rounded corners, basics, fill=red!30},
+  io/.style={trapezium, trapezium left angle=70, trapezium right angle=110, basics, fill=blue!30},
+  process/.style={rectangle, basics, fill=blue!30},
+  decision/.style={ellipse,basics, fill=green!30},
+  arrow/.style={thick,->,>=stealth},
+}
+
+%---------------------------------------------------------
+\title{NYU Hospital Heart Transplant Progress Report}
+
+\author{{Viraat Singh, Miao Wang, Runze Wang, Yiqing Liu, Allen Yang}\newline
+{Professor: Ali Hirsa}
+}
+
+
+
+\graphicspath{}
+%\graphicspath {{figures/}}
+
+\date{June 26, 2024}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%============================================
+\section{Tasks Accomplished}
+%============================================
+
+\subsection{}
+\begin{frame}
+\frametitle{Work Completed}
+\begin{itemize}
+    \item Extraction of Training Data
+    \vspace{0.12in}
+    \item Construction of PostgreSQL Database
+    \vspace{0.12in}
+    \item Model Construction (In Progress)
+    \vspace{0.12in}
+\end{itemize}
+\end{frame}
+
+\subsection{}
+\begin{frame}
+\frametitle{Data Extraction}
+\begin{itemize}
+    \item Developed a Python script to extract a balanced set of experimental data.
+    \vspace{0.12in}
+    \item Constructed dataset includes 400 accepted transplant samples, 400 rejected transplant samples, 100 conditionally accepted transplant samples, and 100 bypassed transplant samples.
+    \vspace{0.12in}
+\end{itemize}
+\end{frame}
+
+\subsection{}
+\begin{frame}
+\frametitle{Data Related Questions}
+\begin{itemize}
+    \item Is there a significant difference between "conditionally accept" and "accept," and between "reject" and "bypass"? This will determine whether we should treat them as four distinct categories.
+    \vspace{0.12in}
+    \item If our model were to make mistakes, which type would be more acceptable: rejecting patients who should be accepted or accepting patients who should be rejected?
+\end{itemize}
+\end{frame}
+
+\subsection{}
+\begin{frame}
+\frametitle{Database Construction}
+\begin{itemize}
+    \item Integrated heart transplant-related tables using PostgreSQL, simplifying the data management extraction process.
+    \vspace{0.12in}
+    \item Saved scripts for database construction, enabling easy pipeline creation for other organs such as lungs and livers.
+    \vspace{0.12in}
+\end{itemize}
+\end{frame}
+
+\subsection{}
+\begin{frame}
+\frametitle{Model Construction}
+\begin{itemize}
+    \item Brainstormed and drafted initial functions for the model, subject to further refinement.
+    \vspace{0.12in}
+    \item Started researching and discussing relevant academic papers to inform the process.
+    \vspace{0.12in}
+    \item Ongoing progress ready for formal initiation with selected columns. We will have more to present on this next week.
+    \vspace{0.12in}
+\end{itemize}
+\end{frame}
+
+%===================================
+\section{Looking Forward}
+%===================================
+
+\subsection{}
+\begin{frame}
+\frametitle{Looking Forward}
+\begin{itemize}
+    \item Formally constructing a prototype model.
+    \vspace{0.12in}
+    \item Developing a list of function explanations for professional review to ensure logical accuracy.
+    \vspace{0.12in}
+    \item Testing and training the model with different success parameters such as acceptance rate, misclassification rate, etc. (Additional ideas are welcome.)
+    \vspace{0.12in}
+\end{itemize}
+\end{frame}
+
+\end{document}
